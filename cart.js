@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(function(acc, val) {
+    return acc + val.price;
+}, 0)
 
+// console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +58,11 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal + (cartTotal * tax)) - couponValue;
+}
 
+// console.log(calcFinalPrice(100, 20, 0.1))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +86,15 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    Some useful properties would be:
+        - id (number), to identify customer
+        - name (string), name of customer to know who you're dealing with
+        - phoneNumber (string), contact info to send receipt, ads, etc.
+        - email (string), the more info the better
+        - address (string), where to send/ deliver products to if need be
+        - cardNumber (string), to we can get money
+        - VIP (boolean), to identify the status of our customer for special offers, etc.
+        - frequency (number), how many time customer has visited or purchased from us
 */
 
 /*
@@ -88,3 +103,13 @@ const cart = [
 */
 
 //CODE HERE
+const customerObject = {
+    id: 1,
+    name: "Miso",
+    phoneNumber: "0123456789",
+    email: "misoshibainu@gmail.com",
+    address: "1 Main Street, Dogville, AC 12345",
+    cardNumber: "1234567890123456",
+    VIP: true,
+    frequency: 100
+}

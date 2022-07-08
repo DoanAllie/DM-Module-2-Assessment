@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: "Mad Dog",
+    price: 15,
+    category: "entree",
+    popularity: 10,
+    rating: 5,
+    tags: ["mozzarella", "pepperoni", 'sausage', "ground beef", "red sauce"]
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +62,7 @@
 
 //CODE HERE
 
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -64,6 +73,8 @@
 
 //CODE HERE
 
+const {price} = pizza;
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -74,6 +85,8 @@
 
 //CODE HERE
 
+const {category} = pizza;
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +102,48 @@
 
 //CODE HERE
 
-
+const foodArr = [
+    {
+        name: "Tristan Pizza",
+        price: 15,
+        category: "pizzas",
+        popularity: 10,
+        rating: 5,
+        tags: ["mozzarella", "asiago,", 'roasted red peppers', "mushrooms", "pesto"]
+    },
+    {
+        name: "Garden Salad",
+        price: 10,
+        category: "salads",
+        popularity: 9,
+        rating: 4,
+        tags: ["mixed greens", "romaine", "diced tomatoes", "cucumbers", "sherry dijon vinaigrette"]
+    },
+    {
+        name: "Cheesy Garlic Bread",
+        price: 8,
+        category: "sides",
+        popularity: 8,
+        rating: 3,
+        tags: ["Dip into red sauce", "pesto", "ranch or sri-rancha"]
+    },
+    {
+        name: "No Name Cake",
+        price: 4,
+        category: "deserts",
+        popularity: 7,
+        rating: 2,
+        tags: ["A chocolate cake with a rich vanilla buttercream center", "covered with chocolaty glaze"]
+    },
+    {
+        name: "Fountain Drinks",
+        price: 2,
+        category: "beverages",
+        popularity: 6,
+        rating: 1,
+        tags: ["Coca-Cola", "Dr.Pepper"]
+    },
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,9 +159,11 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(function(obj) {
+    return obj.tags.includes("pesto");
+})
 
-
+// console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -150,6 +206,16 @@
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    const result = foodArr.filter(function(obj) {
+        if (type === "above") {
+            return obj[property] > number;
+        } else if (type === "below") {
+            return obj[property] < number;
+        }
+    })
+    return result;
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +225,6 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty("price", 5, "below"))
+// console.log(filterByProperty("price", 5, "above"))
