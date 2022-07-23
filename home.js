@@ -86,13 +86,22 @@ const canWeDeliver = (zipCode) => {
 
 const canWeDeliverTwo = (zipCode) => {
     for (let i=0; i < deliveryAreaZipCodes.length; i++) {
-        if (zipCode !== deliveryAreaZipCodes[i]) {
-            return "Sorry, we can't deliver to that address";
-        } else {
+        if (zipCode === deliveryAreaZipCodes[i]) {
             return "You're in our delivery zone!";
+        } else {
+            return "Sorry, we can't deliver to that address";
         }
     }
 }
+
+// const canWeDeliverTwo = (zipCode) => {ç
+//     const found = deliveryAreaZipCodes.filter(element => element === zipCode)
+//     if (found.length > 0) {
+//         return "You're in our delivery zone!";
+//     } else {
+//         return "Sorry, we can't deliver to that address";
+//     }
+// }
 
 // console.log(canWeDeliverTwo(77056))
 // console.log(canWeDeliverTwo(85205))

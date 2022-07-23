@@ -207,14 +207,13 @@ const filteredFood = foodArr.filter(function(obj) {
 //CODE HERE
 
 const filterByProperty = (property, number, type) => {
-    const result = foodArr.filter(function(obj) {
+    return foodArr.filter(function(obj) {
         if (type === "above") {
             return obj[property] > number;
         } else if (type === "below") {
             return obj[property] < number;
         }
     })
-    return result;
 }
 
 /*

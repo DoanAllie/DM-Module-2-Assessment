@@ -33,7 +33,7 @@
 
 class Ticket {
     constructor(items, orderTime, customerId) {
-        this.item = items;
+        this.items = items;
         this. orderTime = orderTime;
         this.customerId = customerId;
         this.status = "queued";
@@ -70,3 +70,5 @@ const firstTicket = new Ticket(["pizza, bread, soda"], "7:03 PM", 575)
 //CODE HERE
 
 firstTicket.updateStatus("cooking");
+
+console.log(firstTicket)
